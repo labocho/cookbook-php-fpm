@@ -79,10 +79,10 @@ when 'debian'
 
 when 'amazon', 'fedora', 'centos', 'redhat'
   unless platform?('centos', 'redhat') && node['platform_version'].to_f >= 6.4
-    yum_repository 'remi' do
+    yum_repository 'remi-php55' do
       description 'Remi'
-      url 'http://rpms.famillecollet.com/enterprise/$releasever/remi/$basearch/'
-      mirrorlist 'http://rpms.famillecollet.com/enterprise/$releasever/remi/mirror'
+      url 'http://rpms.famillecollet.com/enterprise/$releasever/php55/$basearch/'
+      mirrorlist 'http://rpms.famillecollet.com/enterprise/$releasever/php55/mirror'
       gpgkey 'http://rpms.famillecollet.com/RPM-GPG-KEY-remi'
       action :add
     end
